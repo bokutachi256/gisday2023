@@ -5,35 +5,35 @@
 ## サンプルデータのダウンロードとコピー
 githubのページを開きます．
 
-![githubのページ](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231113_214533.png){width=50%}  
+![githubのページ](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231113_214533.png)  
 
 `sample_data`に入り，サンプルデータをクリックします．
 
-![サンプルデータ](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231113_214816.png){width=50%}  
+![サンプルデータ](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231113_214816.png)  
 
 ダウンロードボタンを押してデータをダウンロードします．
 4個のサンプルデータをダウンロードしてください．
 
-![サンプルデータのダウンロード](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231113_215205.png){width=50%}  
+![サンプルデータのダウンロード](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231113_215205.png)  
 
 ArcGIS Proを開き，新しいプロジェクト`GISDAY2023`を作ります．
 
-![プロジェクトの作成](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231113_220134.png){width=50%}  
+![プロジェクトの作成](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231113_220134.png)  
 
 カタログウインドウからフォルダーを開き，GISDAY2023フォルダを右クリックし，ファイルエクスプローラーで表示を選びます．
 エクスプローラーでプロジェクタフォルダが開きますので，ダウンロードした4個のファイルをコピーします．
 
-![picture 2](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_131312.png){width=50%}  
+![picture 2](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_131312.png)  
 
 ジオプロセッシングウインドウから「JSON→フィーチャ」を選び，入力JSONにプロジェクトフォルダーにコピーしたサンプルデータを指定します．出力フィーチャクラスにGISDAY2023.gdbを指定し，サンプルデータのファイル名を入力します．ジオメトリタイプはポリゴンのままにします．他の3個のサンプルデータも同様にファイルジオデータベースファイルにコピーします．
 
-![picture 3](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_131914.png){width=50%}  
+![picture 3](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_131914.png)  
 
 背景地図に地理院タイルの淡色地図を指定します．マップタブのデータの追加からパスからのデータを選び，パスに淡色地図のURLを貼り付けます．
 
 https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png
 
-![picture 4](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_132403.png){width=50%}  
+![picture 4](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_132403.png)  
 
 # データの作成
 
@@ -41,27 +41,27 @@ https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png
 
 道路ポリゴンの道路部分を選択し，ジオプロセッシングウインドウからランダムポイントの作成を選びます．
 
-![picture 5](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_132711.png){width=50%}  
+![picture 5](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_132711.png)  
 
 出力場所をGISDAY2023.gdb，出力ポイントフィーチャクラスを`start_points500`，制限フィーチャクラスを`road_polygons`，ポイント数を500，最小距離を1メートルにします．実行すると選択された道路ポリゴン内にランダムなポイント後500個作成されます．
 
-![picture 6](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_132941.png){width=50%}  
+![picture 6](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_132941.png)  
 
 
 カタログウインドウのGISDAY2023.gdbを右クリックして新規，フィーチャクラスを選びます．
 新しく作成するフィーチャクラスの名前を`goal_points`，フィーチャクラスタイプはポイントにします．次にフィールドを対回鱒．追加するフィールド名は`goal_ID`，データタイプは`Short Integer`にします．作成するポイントデータの空間参照は平面直角座標系第2系（JGD2011）にします．作成するフィーチャクラスの指定が終了したらgoal_pointsのポイントツールを使って，対象範囲に4個のポイントを作成します．
 
-![picture 7](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_133624.png){width=50%} 
+![picture 7](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_133624.png) 
 
-![picture 8](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_134134.png){width=50%}  
+![picture 8](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_134134.png)  
 
 ポイントを打ったら完了ボタンを押して変更を確定し，保存ボタンを押して変更点を保存します．
 
-![picture 10](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_135125.png){width=50%}  
+![picture 10](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_135125.png)  
 
 `goal_points`の属性テーブルを開き，属性`goal_ID`に通し番号をつけます．
 
-![picture 9](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_134249.png){width=50%}  
+![picture 9](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_134249.png)  
 
 ## ラスタファイルの作成
 
@@ -72,31 +72,31 @@ https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png
 出力セルサイズは`5`，出力範囲は`aoi`レイヤーに一致させて下さい．
 実行するとaoiレイヤーと同じ大きさで値が1のラスターデータが作成されます．
 
-![picture 11](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_135453.png){width=50%}  
+![picture 11](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_135453.png)  
 
 ### コストラスタの作成
 
 road_polygonsの属性テーブルを開き，Short型の属性`road`を追加し，道路部分の値を1，道路以外の値を0にします．
 
-![picture 12](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_135855.png){width=50%}
+![picture 12](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_135855.png)
 
-![picture 13](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_140244.png){width=50%}  
+![picture 13](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_140244.png)  
 
 road_polygonsの属性テーブルから属性条件で選択を選び，`road`が1のポリゴンのみを選択します．
 フィールド演算を用いて選択されたポリゴンの属性`cost`を`1`にします．
 選択を反転し，`road`が0のポリゴンの属性`cost`を10にします．
 
-![picture 14](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_140533.png){width=50%}  
+![picture 14](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_140533.png)  
 
 ジオプロセッシングから「フィーチャ → ラスタ」を選びます．
 入力フィーチャを`road_polygons`，フィールドを`cost`，出力ラスターをgisday2023フォルダの`cost.tif`，出力セルサイズを`5`にして環境タブをクリックします．
 スナップ対象ラスタを`road.tif`にして実行します．
 
-![picture 15](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_141129.png){width=50%}  
+![picture 15](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_141129.png)  
 
 道路部分が1，道路以外が10の5mメッシュのラスタデータができました．
 
-![picture 16](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_141503.png){width=50%}  
+![picture 16](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_141503.png)  
 
 ### 加重コスト距離の作成
 
@@ -105,23 +105,23 @@ road_polygonsの属性テーブルから属性条件で選択を選び，`road`�
 出力距離ラスターを`GISDAY2023`フォルダ内に`CostDis.tif`として保存します．
 実行すると加重コスト距離ラスターが作成されます．
 
-![picture 17](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_152238.png){width=50%}  
+![picture 17](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_152238.png)  
 
-![picture 18](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_152558.png){width=50%}  
+![picture 18](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_152558.png)  
 
 ### スタート地点への属性付与
 
 スタート地点データ`start_points500`にShort型の属性`cost_ID`を追加して保存します．
 `cost_ID`の値を`0`にします．
 
-![picture 19](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_152853.png){width=50%}  
+![picture 19](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_152853.png)  
 
 ### スタート地点とゴール地点をGeoJSONで書き出す
 
 ジオプロセッシングから「フィーチャ → JSON」を選び，`start_points500`と`goal_points`をそれぞれ`start_points500.geojson`と`goal_points.geojson`で書き出します．
 その際に「GeoJSONに出力」にチェックを入れます．
 
-![picture 20](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_153009.png){width=50%}  
+![picture 20](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231116_153009.png)  
 
 # GoogleColaboratoryでのプログラム実行
 
@@ -247,9 +247,116 @@ ArcGISのカタログウインドウを右クリックして最新の情報に�
 
 ## テスト用にエージェント数を減らす
 
+
+```python
+# これを
+start_location = gpd.read_file(base_dir + start_geojson).explode(index_parts = True)\
+  .cx[ULX+Xsize: ULX + ((cost_file.RasterXSize - 1) * Xsize)\
+  , ULY + ((cost_file.RasterYSize + 1) * Ysize): ULY + Ysize]
+```
+
+に`.sample(200)`を加えます．
+
+```python
+# このように変更します．
+start_location = gpd.read_file(base_dir + start_geojson).explode(index_parts = True)\
+  .cx[ULX+Xsize: ULX + ((cost_file.RasterXSize - 1) * Xsize)\
+  , ULY + ((cost_file.RasterYSize + 1) * Ysize): ULY + Ysize]\
+  .sample(200)
+```
+
 ## 計算ステップ数を変える
 
+`runstep`の数を変えます．
+
+```python
+# 実行するステップ数を指定する
+# テストなら200ステップくらいが妥当か
+runstep = 200
+```
+
+```python
+# 実行するステップ数を指定する
+# テストなら200ステップくらいが妥当か
+runstep = 500
+```
+
 ## エージェントごとに行動パターンを変える
+
+エージェントはコスト距離に従って移動します．
+本プログラムは複数のコスト距離に対応しているので，
+必要なだけコスト距離を作成してプログラムに読み込ませます．
+例えばコスト距離のデータが4個（`CostDis0.tif`，`CostDis1.tif`，`CostDis2.tif`，`CostDis3.tif`）あった場合，
+プログラム中でコスト距離のファイルを指定している部分を変更します．
+
+```python
+# これを
+cost_files = ['CostDis.tif']
+```
+
+```python
+# このように変更します
+cost_files = [`CostDis0.tif`, `CostDist1.tif`, `CostDist2.tif`, `CostDist3.tif`]
+```
+
+エージェントがどのコスト距離を参照するかはエージェントの属性`cost_ID`に従います．
+属性`cost_ID`にはコスト距離リストのインデックスを指定します．
+前述の例だと，`CostDist0.tif`に従う場合は`0`を，`CostDis2.tif`に従う場合は`1`にします．
+
+試しに複数のコスト距離を作成してみましょう．
+ゴール地点の一つを選択し，ジオプロセッシングからコスト距離を選びます．
+「入力ラスターまたはフィーチャソースデータ」に`goal_points`を選びます．
+`goal_points`のうちの一つが選択されているので，「入力に選択が含まれています．処理するレコード: 1」と表示され，コスト距離の処理点としてゴールの1点のみが指定されていることがわかります．
+この状態でコスト距離を作成すると，選択されているゴールまでのコスト距離が生成されます．
+他のゴール点についても同様にコスト距離を作成し，出力するファイル名を`CostDis0.tif`，`CostDis1.tif`，`CostDis2.tif`，`CostDis3.tif`とします．
+
+![picture 43](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231117_110140.png)  
+
+次に`start_points500`に`Short`型の属性`cost_ID`を追加します．
+続いてスタート点ごとに`cost_ID`の値を設定します．
+コスト距離のファイルは新たに作成した4個を使うので，`cost_ID`の値は`0`から`3`までを入れます．
+ここではランダムに`0`から`3`までの値を入れます．
+
+フィールド演算を開き，入力テーブルを`stasrt_point500`，フィールド名を`cost_ID`にし，
+式に`Random()*3`と入力します．これで`cost_ID`は0から3までの整数が入ります．
+
+![picture 44](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231117_110840.png)  
+
+`cost_ID`が設定できたら，`start_points500`をGeoJSONで書き出します．
+ここでは`start_points500_2.geojson`として書き出しました．
+
+![picture 45](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231117_111544.png)  
+
+新たに作成したコスト距離（`CostDis0.tif`，`CostDis1.tif`，`CostDis2.tif`，`CostDis3.tif`）とスタート地点のGeoJSON（`start_points500_2.geojson`）をGoogle Driveの`gisday2023`フォルダにアップロードします．
+
+![picture 46](images/GISDay2023_%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88/20231117_111901.png)  
+
+次にプログラムを修正します．
+
+「データファイルの指定」セルのコスト距離の指定の部分を変更します．
+
+```python
+# これを
+cost_files = ['CostDis.tif']
+```
+
+```python
+# このように変更します
+cost_files = [`CostDis0.tif`, `CostDist1.tif`, `CostDist2.tif`, `CostDist3.tif`]
+```
+
+また，スタート地点の指定も変更します．
+
+```python
+# これを
+start_geojson = 'start_points500.geojson'
+```
+
+```python
+# このように変更します
+start_geojson = 'start_points500_2.geojson'
+```
+
 
 ## 通行不可能な場所を設定する
 
