@@ -20,6 +20,6 @@
 
 # 使用データ
 
-* 基盤地図情報基本データ
-  * [https://www.gsi.go.jp/kiban/](`https://www.gsi.go.jp/kiban/`)
+* 基盤地図情報
+  * [https://www.gsi.go.jp/kiban/](https://www.gsi.go.jp/kiban/)
   * 基本項目の道路縁，建築物の外周線，水涯線を使用
